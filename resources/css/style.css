@@ -642,16 +642,6 @@ footer i {
                           "object persons bed bath wifi pool";
   }
 
-  #form {
-    grid-template-areas:  ". name name name name ."
-                          ". email email email email ."
-                          ". query query query query ."
-                          ". submit . . . .";
-  }
-
-  #name, #email, #query {
-    font-size: 1.3rem;
-  }
 }
 
 @media screen and (max-width: 550px) {
@@ -665,6 +655,17 @@ footer i {
 
   #link1, #link2, #link3, #link4 {
     font-size: 2rem;
+  }
+
+  #form {
+    grid-template-areas:  ". name name name name ."
+                          ". email email email email ."
+                          ". query query query query ."
+                          ". submit . . . .";
+  }
+
+  #name, #email, #query {
+    font-size: 1.3rem;
   }
 
 }

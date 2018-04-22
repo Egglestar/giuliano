@@ -22,7 +22,7 @@ var houseTween = new TweenMax.to('#house', 1, {opacity: 1});
 var apt1Tween = new TweenMax.to('#apt1', 1, {opacity: 1});
 var apt2Tween = new TweenMax.to('#apt2', 1, {opacity: 1});
 var apt3Tween = new TweenMax.to('#apt3', 1, {opacity: 1});
-var linkTween = new TweenMax.staggerFrom(['#link1', '#link2', '#link3', '#link4'], 0.1, {left: -1000}, 0.2);
+var linkTween = new TweenMax.staggerFrom(['#link1', '#link2', '#link3', '#link4'], 0.1, {left: -2500}, 0.2);
 //var anfrahrt = $("#anfahrt-img").paroller({ factor: '-0.5', type: 'background', direction: 'vertical'});
 var controller = new ScrollMagic.Controller();
 

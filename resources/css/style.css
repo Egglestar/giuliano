@@ -4,6 +4,11 @@ html {
   width: 100%;
 }
 
+body {
+  max-width: 1500px;
+  margin: auto;
+}
+
 h1 {
   font-size: 4.5rem;
   font-weight: bold;
@@ -47,6 +52,7 @@ nav {
   top: 0;
   position: fixed;
   width: 100%;
+  max-width: 1500px;
   -webkit-box-shadow: 0 20px 50px 20px #000000;
   box-shadow: 0 0 19px 0 #000000;
   z-index: 100;

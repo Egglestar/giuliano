@@ -221,6 +221,9 @@ main {
   grid-area: apt3;
   opacity: 0;
 }
+
+/* slide-show via jssor */
+
 /*jssor slider loading skin double-tail-spin css*/
 .jssorl-004-double-tail-spin img {
     animation-name: jssorl-004-double-tail-spin;
@@ -253,38 +256,6 @@ main {
 .jssora052:hover {opacity:.8;}
 .jssora052.jssora052dn {opacity:.5;}
 .jssora052.jssora052ds {opacity:.3;pointer-events:none;}
-
-
-/* Slide Show */
-
-.slider {
-width: auto;
-margin: 30px 50px 50px;
-}
-
-.slick-slide {
-color: white;
-padding: 40px 0;
-font-size: 30px;
-font-family: "Arial", "Helvetica";
-text-align: center;
-overflow: hidden;
-}
-
-.slick-slide img {
-max-height: 60vh;
-margin: 0 auto;
-object-fit: scale-down;
-}
-
-.slick-prev::before,
-.slick-next::before {
-color: black;
-}
-
-.slick-dots {
-bottom: -30px;
-}
 
   /* Style of icon-list */
 

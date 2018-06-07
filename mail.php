@@ -2,30 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>mail senden</title>
+    <meta name"viewport" content="width=device-width, initial-scale=1">
+    <title>Mailformular - Masseria Prontera</title>
   </head>
   <body>
+
     <?php
-      if ($_POST["name"]!="" and $_POST["email"]!="" and $_POST["message"]!="") {
-        $empf = "svetter82@yahoo.de";
-        $betreff = "Buchungsanfrage";
-        $from = "From: ";
-        $from .= $_POST["name"];
-        $form .= " <";
-        $form .= $_POST["email"];
-        $form .= ">\n";
-        $from .= "Reply to: ";
-        $form .= $_POST["email"];
-        $from .= "\n";
-        $from .= "Content-Type: text/html \n";
-        $text = $_POST["message"];
+    $mailTo = "info@masseria-prontera.com";
+    $mailFrom = $_POST["name"];
+    $replyTo  = $_POST["email"];
+    $subject = "Anfrage zur Buchung";
+    $mailText = "Anfrage von: $mailFrom" . "\n" . "Mail von: $replyTo" . "\n" . wordwrap($_POST["message"], 70, "\r\n");
 
-        mail($empf, $betreff, $from, $text);
-        echo "vielen Dank!";
-      } else {
-        echo "Bitte alle Felder ausfüllen."
-      }
+    $returnPage = 'http://masseria-prontera.com/#buchung';
+    $returnErrorPage = 'http://masseria-prontera.com/mail_fehler.html';
 
-    ?>
+
+
+    // ======= Mailversand
+
+ // Mail versenden und Versanderfolg merken
+ $mailSent = @mail($mailTo, $subject, $mailText, $header);
+
+ // ======= Return-Seite an den Browser senden
+
+ // Wenn der Mailversand erfolgreich war:
+ if($mailSent == TRUE) {
+    // Seite "Formular verarbeitet" senden:
+    header("Location: " . $returnPage);
+ }
+ // Wenn die Mail nicht versendet werden konnte:
+ else {
+    // Seite "Fehler aufgetreten" senden:
+    header("Location: " . $returnErrorPage);
+ }
+
+ // ======= Ende
+
+ exit();
+
+  ?>
+
   </body>
 </html>

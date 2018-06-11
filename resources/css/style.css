@@ -189,10 +189,12 @@ main {
   grid-auto-flow: row;
   grid-gap: 1rem;
   grid-template-areas:  "apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg"
+                        "para1 para1 para1 para1 para1 para1 para1 para1 para1 para1 para1 para1"
                         "house house house house house house house house house house house house"
                         "apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1"
                         "apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2"
-                        "apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3";
+                        "apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3"
+                        "para2 para2 para2 para2 para2 para2 para2 para2 para2 para2 para2 para2";
 }
 
 .facility {
@@ -226,6 +228,17 @@ main {
 #apt3 {
   grid-area: apt3;
   opacity: 0;
+}
+
+#para1 {
+  grid-area: para1;
+  text-align: justify;
+}
+
+#para2 {
+  grid-area: para2;
+  text-align: justify;
+  padding-top: 1rem;
 }
 
 /* slide-show via jssor */
@@ -275,18 +288,6 @@ main {
   font-size: 2rem;
 }
 
-.iconObj {
-  grid-area: iconObj;
-}
-
-.headerObj {
-  grid-area: headerObj;
-}
-
-.object {
-  grid-area: object;
-}
-
 .iconPersons {
   grid-area: iconPersons;
 }
@@ -309,6 +310,18 @@ main {
 
 .bed {
   grid-area: bed
+}
+
+.iconCouch {
+  grid-area: iconCouch;
+}
+
+.headerCouch {
+  grid-area: headerCouch;
+}
+
+.couch {
+  grid-area: couch;
 }
 
 .iconBath {
@@ -357,9 +370,9 @@ main {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: row;
   grid-gap: 1rem;
-  grid-template-areas:  "iconObj iconPersons iconBed iconBath"
-                        "headerObj headerPersons headerBed headerBath"
-                        "object persons bed bath";
+  grid-template-areas:  "iconPersons iconBed iconCouch iconBath"
+                        "headerPersons headerBed headerCouch headerBath"
+                        "persons bed couch bath";
 }
 
 
@@ -513,7 +526,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/lecce-schwarzweiss.jpg");
+  background-image: url("../images/28.JPG");
   background-repeat: repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -530,10 +543,32 @@ main {
   padding: 6rem 0;
 }
 
+.address h3 {
+  padding-top: 2rem;
+}
+
+.address a {
+    text-decoration: none;
+    color: black;
+    transition: ease-in 0.3s;
+    background-color: inherit;
+    font-size: 2.6rem;
+}
+
+.address a:hover {
+  color: rgba(204, 153, 51, 1);
+}
+
 #map {
   height: 90vh;
   width: 100%;
   grid-area: map;
+}
+
+#para3 {
+  grid-area: para3;
+  text-align: justify;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .location {
@@ -542,6 +577,7 @@ main {
   grid-gap: 1rem;
   grid-auto-flow: row;
   grid-template-areas:  ". address address address address ."
+                        "para3 para3 para3 para3 para3 para3"
                         "map map map map map map";
   }
 
@@ -556,7 +592,7 @@ footer {
   grid-auto-flow: row;
   grid-gap: 1rem;
   grid-template-areas:  "address-footer address-footer address-footer address-footer"
-                        "mail-footer . . ."
+                        "gaetano phone mail-footer ."
                         "copyright . impressum datenschutz";
 }
 
@@ -582,6 +618,14 @@ footer i {
 
 #address-footer {
   grid-area: address-footer;
+}
+
+#gaetano-footer {
+  grid-area: gaetano;
+}
+
+#phone-footer {
+  grid-area: phone;
 }
 
 #mail-footer {
@@ -612,9 +656,20 @@ footer i {
 /* When the screen is less than 980 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 
 @media screen and (min-width: 980px) {
+
+  #apartment {
+    grid-template-areas:  "apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg apt-hdg"
+                          ". . . para1 para1 para1 para1 para1 para1 . . ."
+                          "house house house house house house house house house house house house"
+                          "apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1 apt1"
+                          "apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2 apt2"
+                          "apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3 apt3"
+                          ". . . para2 para2 para2 para2 para2 para2 . . .";
+  }
+
   .location {
     grid-template-areas:  "address address map map map map"
-                          "address address map map map map";
+                          "para3 para3 map map map map";
   }
   .address {
     text-align: center;
@@ -638,6 +693,12 @@ footer i {
     display: block;
     padding: 0 2rem 0 0;
   }
+
+  footer {
+    grid-template-areas: "address-footer address-footer address-footer address-footer"
+                          "gaetano phone phone mail-footer"
+                          "copyright . impressum datenschutz";
+  }
 }
 
 @media screen and (min-width: 940px) {
@@ -647,9 +708,9 @@ footer i {
 
   .icons {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:  "iconObj iconPersons iconBed iconBath iconWifi iconPool"
-                          "headerObj headerPersons headerBed headerBath headerWifi headerPool"
-                          "object persons bed bath wifi pool";
+    grid-template-areas:  "iconPersons iconBed iconCouch iconBath iconWifi iconPool"
+                          "headerPersons headerBed headerCouch headerBath headerWifi headerPool"
+                          "persons bed couch bath wifi pool";
   }
 
 }
@@ -677,6 +738,7 @@ footer i {
   #name, #email, #query {
     font-size: 1.3rem;
   }
+
 
 }
 
@@ -706,7 +768,11 @@ footer i {
   }
 
   footer i {
-    font-size: 1rem;
+    font-size: 1.8rem;
+  }
+
+  footer a {
+    font-size: 1.2rem;
   }
 }
 

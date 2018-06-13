@@ -184,7 +184,9 @@ main {
 #apartment {
   padding: 15vh 2rem 3rem 2rem;
   text-align: center;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-flow: row;
   grid-gap: 1rem;
@@ -208,37 +210,58 @@ main {
 #apt-hdg {
   grid-area: apt-hdg;
   padding-bottom: 5rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #house{
   grid-area: house;
   opacity: 0;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #apt1 {
   grid-area: apt1;
   opacity: 0;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #apt2 {
   grid-area: apt2;
   opacity: 0;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #apt3 {
   grid-area: apt3;
   opacity: 0;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #para1 {
   grid-area: para1;
   text-align: justify;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 #para2 {
   grid-area: para2;
   text-align: justify;
   padding-top: 1rem;
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 25;
 }
 
 /* slide-show via jssor */
@@ -290,74 +313,110 @@ main {
 
 .iconPersons {
   grid-area: iconPersons;
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
 }
 
 .headerPersons {
   grid-area: headerPersons;
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
 }
 
 .persons {
   grid-area: persons;
+  -ms-grid-column: 2;
+  -ms-grid-row: 3;
 }
 
 .iconBed {
   grid-area: iconBed;
+  -ms-grid-column: 4;
+  -ms-grid-row: 1;
 }
 
 .headerBed {
   grid-area: headerBed;
+  -ms-grid-column: 4;
+  -ms-grid-row: 2;
 }
 
 .bed {
-  grid-area: bed
+  grid-area: bed;
+  -ms-grid-column: 4;
+  -ms-grid-row: 3;
 }
 
 .iconCouch {
   grid-area: iconCouch;
+  -ms-grid-column: 6;
+  -ms-grid-row: 1;
 }
 
 .headerCouch {
   grid-area: headerCouch;
+  -ms-grid-column: 6;
+  -ms-grid-row: 2;
 }
 
 .couch {
   grid-area: couch;
+  -ms-grid-column: 6;
+  -ms-grid-row: 3;
 }
 
 .iconBath {
   grid-area: iconBath;
+  -ms-grid-column: 8;
+  -ms-grid-row: 1;
 }
 
 .headerBath {
   grid-area: headerBath;
+  -ms-grid-column: 8;
+  -ms-grid-row: 2;
 }
 
 .bath {
   grid-area: bath;
+  -ms-grid-column: 8;
+  -ms-grid-row: 3;
 }
 
 .iconWifi {
   grid-area: iconWifi;
+  -ms-grid-column: 10;
+  -ms-grid-row: 1;
 }
 
 .headerWifi {
   grid-area: headerWifi;
+  -ms-grid-column: 10;
+  -ms-grid-row: 2;
 }
 
 .wifi {
   grid-area: wifi;
+  -ms-grid-column: 10;
+  -ms-grid-row: 3;
 }
 
 .iconPool {
   grid-area: iconPool;
+  -ms-grid-column: 12;
+  -ms-grid-row: 1;
 }
 
 .headerPool {
   grid-area: headerPool;
+  -ms-grid-column: 12;
+  -ms-grid-row: 2;
 }
 
 .pool {
   grid-area: pool;
+  -ms-grid-column: 12;
+  -ms-grid-row: 3;
 }
 
 .iconWifi, .headerWifi, .wifi, .iconPool, .headerPool, .pool, .icons i:nth-child(5n+0), .icons i:nth-child(6n+0){
@@ -366,7 +425,9 @@ main {
 
 .icons {
   padding: 2rem 0;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: row;
   grid-gap: 1rem;
@@ -707,6 +768,7 @@ footer i {
   }
 
   .icons {
+    -ms-grid-columns: 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px;
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:  "iconPersons iconBed iconCouch iconBath iconWifi iconPool"
                           "headerPersons headerBed headerCouch headerBath headerWifi headerPool"

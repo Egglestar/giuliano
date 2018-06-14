@@ -409,7 +409,8 @@
         <h1>Dein Weg zu uns</h1>
       </div>
       <div class="location">
-          <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.0927135316747!2d18.33553171525874!3d39.84975527943509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13440bd4125832c3%3A0xec51dfc871458617!2sMasseria+Prontera+Complex!5e0!3m2!1sde!2sde!4v1528883397803" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <!-- <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.0927135316747!2d18.33553171525874!3d39.84975527943509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13440bd4125832c3%3A0xec51dfc871458617!2sMasseria+Prontera+Complex!5e0!3m2!1sde!2sde!4v1528883397803" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+          <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d738.8194242314478!2d18.336521467389677!3d39.849638874352785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec51dfc871458617!2sMasseria+Prontera+Complex!5e1!3m2!1sde!2sde!4v1528970255797" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
       <div class="address">
         <h3>Gaetano Prontera</h3>
         <a href="tel:+41789065753">+41 78 906 57 53</a>
@@ -460,6 +461,21 @@
     'alwaysShowNavOnTouchDevices': true,
     'wrapAround': true
   })
+  </script>
+
+  <script>
+
+  // script für Soft-Scroll Effekt bei sprüngen zu tiefern Kapiteln durch "id"
+  $('a[href*="#"]').on('click',function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    var $target = $(target);
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+      window.location.hash = target;
+    });
+  });
   </script>
 
   </body>

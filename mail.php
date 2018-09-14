@@ -15,7 +15,7 @@
     $mailText = "Anfrage von: $mailFrom" . "\n" . "Mail von: $replyTo" . "\n" . wordwrap($_POST["message"], 70, "\r\n");
 
     $returnPage = 'http://masseria-prontera.com/#buchung';
-    $returnErrorPage = 'http://masseria-prontera.com/mail_fehler.html';
+    $returnErrorPage = 'http://masseria-prontera.com/mail_failure.html';
 
 
 
